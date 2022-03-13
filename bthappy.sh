@@ -1,6 +1,24 @@
 #!/bin/bash
 LANG=en_US.UTF-8
 
+echo "
++----------------------------------------------------------------------
+| Bt-WebPanel-Happy FOR CentOS
++----------------------------------------------------------------------
+| 本脚本用于宝塔面板7.7版本的一键开心，因为脚本造成的问题请自行负责！
++----------------------------------------------------------------------
+| 安装脚本：curl -sSO https://cdn.jsdelivr.net/gh/ztkink/bthappy@latest/install_panel.sh && bash install_panel.sh
++----------------------------------------------------------------------
+"
+while [ "$go" != 'y' ] && [ "$go" != 'n' ]
+do
+	read -p "请确认你已经安装的版本是7.7，请确认你将开心的宝塔面板用于学习！(y/n): " go;
+done
+
+if [ "$go" == 'n' ];then
+	exit;
+fi
+
 #修改强制登录开始
 sed -i "s|if (bind_user == 'True') {|if (bind_user == 'REMOVED') {|g" /www/server/panel/BTPanel/static/js/index.js
 rm -rf /www/server/panel/data/bind.pl

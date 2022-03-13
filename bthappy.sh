@@ -2,4 +2,6 @@ sed -i "s|if (bind_user == 'True') {|if (bind_user == 'REMOVED') {|g" /www/serve
 rm -rf /www/server/panel/data/bind.pl
 cd /www/server/panel/data
 wget https://cdn.jsdelivr.net/gh/ztkink/bthappy@latest/plugin.json
+wget https://cdn.jsdelivr.net/gh/ztkink/bthappy@latest/repair.json
 chattr +i /www/server/panel/data/plugin.json
+chattr +i /www/server/panel/data/repair.json
